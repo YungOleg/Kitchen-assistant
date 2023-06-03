@@ -10,6 +10,6 @@ KA is your professional culinary assistant. With it, you will always find the pe
 * Jetpack
     * Room
     * Hilt*
-##### Architecture
+### Architecture
 * Layers architecture
 * MVVM
