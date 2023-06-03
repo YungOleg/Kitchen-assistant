@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +29,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.kitchen_assistant.domain.local.model.Favourites
 import com.example.kitchen_assistant.domain.remote.model.Recipe
 import com.example.kitchen_assistant.domain.remote.model.getString
+import com.example.kitchen_assistant.presentation.ui.components.RatingBar
 import com.example.kitchen_assistant.presentation.ui.components.Screen
 import com.example.kitchen_assistant.presentation.ui.theme.surfaceColor
 import java.net.URLEncoder
@@ -43,20 +45,22 @@ fun FavouritesItem(
             .height(180.dp)
             .padding(horizontal = 4.dp, vertical = 4.dp)
             .clickable {
-                val encodedId = URLEncoder.encode(favourites.id.toString(), "UTF-8")
-                val encodedName = URLEncoder.encode(favourites.name, "UTF-8")
-                val encodedInstruction = URLEncoder.encode(favourites.instructions, "UTF-8")
-                val encodedIngredients = URLEncoder.encode(favourites.ingredients, "UTF-8")
-                val encodedImageUrl = URLEncoder.encode(favourites.imageUrl, "UTF-8")
-                val rating = favourites.rating
-                navController.navigate(
-                    "${Screen.FAVOURITES_DETAIL_ROUTE}/" +
-                            "$encodedId/" +
-                            "$encodedName/" +
-                            "$encodedInstruction/" +
-                            "$encodedIngredients/" +
-                            "$encodedImageUrl/" + rating
-                )
+                try {
+                    val encodedId = URLEncoder.encode(favourites.id.toString(), "UTF-8")
+                    val encodedName = URLEncoder.encode(favourites.name, "UTF-8")
+                    val encodedInstruction = URLEncoder.encode(favourites.instructions, "UTF-8")
+                    val encodedIngredients = URLEncoder.encode(favourites.ingredients, "UTF-8")
+                    val encodedImageUrl = URLEncoder.encode(favourites.imageUrl, "UTF-8")
+                    val rating = favourites.rating
+                    navController.navigate(
+                        "${Screen.FAVOURITES_DETAIL_ROUTE}/" +
+                                "$encodedId/" +
+                                "$encodedName/" +
+                                "$encodedInstruction/" +
+                                "$encodedIngredients/" +
+                                "$encodedImageUrl/" + rating
+                    )
+                } catch (_: Exception) {}
             },
         shape = RoundedCornerShape(5),
         colors = CardDefaults.cardColors(
@@ -96,6 +100,11 @@ fun FavouritesItem(
                     modifier = Modifier.padding(top = 12.dp),
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Medium
+                )
+                Spacer(modifier = Modifier.padding(top = 6.dp))
+                RatingBar(
+                    rating = favourites.rating,
+                    onRatingChanged = {}
                 )
             }
         }

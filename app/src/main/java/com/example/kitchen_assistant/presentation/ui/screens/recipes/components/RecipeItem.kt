@@ -42,20 +42,22 @@ fun RecipeItem(
             .height(180.dp)
             .padding(horizontal = 4.dp, vertical = 4.dp)
             .clickable {
-                val encodedId = URLEncoder.encode(recipe.id, "UTF-8")
-                val encodedName = URLEncoder.encode(recipe.name, "UTF-8")
-                val encodedInstruction = URLEncoder.encode(recipe.instructions, "UTF-8")
-                val encodedIngredients = URLEncoder.encode(recipe.getString(), "UTF-8")
-                val encodedImageUrl = URLEncoder.encode(recipe.imageUrl, "UTF-8")
-                val rating = recipe.rating
-                navController.navigate(
-                    "${Screen.RECIPE_DETAIL_ROUTE}/" +
-                            "$encodedId/" +
-                            "$encodedName/" +
-                            "$encodedInstruction/" +
-                            "$encodedIngredients/" +
-                            "$encodedImageUrl/" + rating
-                )
+                try {
+                    val encodedId = URLEncoder.encode(recipe.id, "UTF-8")
+                    val encodedName = URLEncoder.encode(recipe.name, "UTF-8")
+                    val encodedInstruction = URLEncoder.encode(recipe.instructions, "UTF-8")
+                    val encodedIngredients = URLEncoder.encode(recipe.getString(), "UTF-8")
+                    val encodedImageUrl = URLEncoder.encode(recipe.imageUrl, "UTF-8")
+                    val rating = recipe.rating
+                    navController.navigate(
+                        "${Screen.RECIPE_DETAIL_ROUTE}/" +
+                                "$encodedId/" +
+                                "$encodedName/" +
+                                "$encodedInstruction/" +
+                                "$encodedIngredients/" +
+                                "$encodedImageUrl/" + rating
+                    )
+                } catch (_: Exception) {}
             },
         shape = RoundedCornerShape(5),
         colors = CardDefaults.cardColors(

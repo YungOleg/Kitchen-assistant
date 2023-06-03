@@ -1,8 +1,8 @@
-package com.example.kitchen_assistant.di.modules
+package com.example.kitchen_assistant.di
 
 import android.content.Context
-import com.example.kitchen_assistant.data.recipes.repository.FavouritesRepositoryImpl
-import com.example.kitchen_assistant.data.recipes.repository.RecipeRepositoryImpl
+import com.example.kitchen_assistant.data.repository.FavouritesRepositoryImpl
+import com.example.kitchen_assistant.data.repository.RecipeRepositoryImpl
 import com.example.kitchen_assistant.domain.local.usecase.DeleteFavouritesUseCase
 import com.example.kitchen_assistant.domain.local.usecase.GetFavouritesUseCase
 import com.example.kitchen_assistant.domain.local.usecase.InsertFavouritesUseCase

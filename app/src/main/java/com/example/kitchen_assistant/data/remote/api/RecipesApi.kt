@@ -1,4 +1,4 @@
-package com.example.kitchen_assistant.data.recipes.remote.api
+package com.example.kitchen_assistant.data.remote.api
 
 import com.example.kitchen_assistant.domain.remote.model.RecipeList
 import retrofit2.http.GET

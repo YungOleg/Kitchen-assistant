@@ -1,4 +1,4 @@
-package com.example.kitchen_assistant.data.recipes.local.source
+package com.example.kitchen_assistant.data.local.source
 
 import androidx.room.Dao
 import androidx.room.Delete

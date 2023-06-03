@@ -1,6 +1,6 @@
-package com.example.kitchen_assistant.di.modules
+package com.example.kitchen_assistant.di
 
-import com.example.kitchen_assistant.data.recipes.remote.api.RecipesApi
+import com.example.kitchen_assistant.data.remote.api.RecipesApi
 import com.example.kitchen_assistant.util.constants.Constants
 import dagger.Module
 import dagger.Provides

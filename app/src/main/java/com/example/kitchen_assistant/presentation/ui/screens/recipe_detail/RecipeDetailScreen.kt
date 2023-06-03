@@ -57,9 +57,16 @@ fun RecipeDetailScreen(
     val state by viewModel.state
 
 //    var isDelete by remember { mutableStateOf(state.isDelete) }
-
     var currentRating by remember { mutableStateOf(rating) }
 
+    val favourites = Favourites(
+        id = id.toInt(),
+        name = name,
+        instructions = instruction,
+        imageUrl = imageUrl,
+        ingredients = ingredients,
+        rating = currentRating
+    )
     Scaffold(
         topBar = {
             RecipeDetailTopBar(
@@ -84,14 +91,7 @@ fun RecipeDetailScreen(
                 isDelete = !state.isDelete,
                 onClick = {
                     state.isDelete = !state.isDelete
-                    val favourites = Favourites(
-                        id = id.toInt(),
-                        name = name,
-                        instructions = instruction,
-                        imageUrl = imageUrl,
-                        ingredients = ingredients,
-                        rating = currentRating
-                    )
+
 
                     if (!state.isDelete) {
                         viewModel.insertFavourite(

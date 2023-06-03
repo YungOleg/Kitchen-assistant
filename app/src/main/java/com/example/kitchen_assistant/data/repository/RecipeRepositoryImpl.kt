@@ -1,6 +1,6 @@
-package com.example.kitchen_assistant.data.recipes.repository
+package com.example.kitchen_assistant.data.repository
 
-import com.example.kitchen_assistant.data.recipes.remote.api.RecipesApi
+import com.example.kitchen_assistant.data.remote.api.RecipesApi
 import com.example.kitchen_assistant.domain.remote.model.Recipe
 import com.example.kitchen_assistant.domain.remote.model.RecipeList
 import com.example.kitchen_assistant.domain.repository.RecipeRepository

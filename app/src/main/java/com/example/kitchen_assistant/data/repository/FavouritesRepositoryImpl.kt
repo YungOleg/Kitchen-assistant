@@ -1,6 +1,6 @@
-package com.example.kitchen_assistant.data.recipes.repository
+package com.example.kitchen_assistant.data.repository
 
-import com.example.kitchen_assistant.data.recipes.local.source.FavouritesDao
+import com.example.kitchen_assistant.data.local.source.FavouritesDao
 import com.example.kitchen_assistant.domain.local.model.Favourites
 import com.example.kitchen_assistant.domain.repository.FavouritesRepository
 import dagger.Module
