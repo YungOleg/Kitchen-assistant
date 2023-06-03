@@ -7,9 +7,11 @@ KA is your professional culinary assistant. With it, you will always find the pe
     * Coroutines
     * Flow
 * Jetpack Compose
-* Jetpack
+* Android Jetpack
     * Room
     * Hilt*
+* Retrofit2
+* Coil
 ### Architecture
 * Layers architecture
 * MVVM
